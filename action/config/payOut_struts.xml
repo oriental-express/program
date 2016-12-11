@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+<package name="payOut_struts" extends="struts-default">
+	<action name="toPayOut" class="com.financialManager.system.action.PayOutAction" method="toPayOut">
+		<result>/payOut/payOut_add.jsp</result>
+	</action>
+	<action name="toPayOutFind" class="com.financialManager.system.action.PayOutAction" method="toFind">
+		<result>/payOut/payOut_find.jsp</result>
+	</action>
+	<action name="payOutGet" class="com.financialManager.system.action.PayOutAction" method="get">
+		<result>/payOut/payOut_update.jsp</result>
+		<result name="error">/error/exception.jsp</result>
+	</action>
+	<action name="payOutAdd" class="com.financialManager.system.action.PayOutAction" method="add">
+		<result type="redirectAction">payOutFindAll</result>
+		<result name="error">/error/exception.jsp</result>
+	</action>
+	<action name="payOutUpdate" class="com.financialManager.system.action.PayOutAction" method="update">
+		<result type="redirectAction">payOutFindAll</result>
+		<result name="error">/error/exception.jsp</result>
+	</action>
+	<action name="payOutDelete" class="com.financialManager.system.action.PayOutAction" method="delete">
+		<result type="redirectAction">payOutFindAll</result>
+		<result name="error">/error/exception.jsp</result>
+	</action>
+	<action name="payOutFindAll" class="com.financialManager.system.action.PayOutAction" method="findAll">
+		<result>/payOut/payOut_list.jsp</result>
+		<result name="error">/error/exception.jsp</result>
+	</action>
+	<action name="payOutFind" class="com.financialManager.system.action.PayOutAction" method="find">
+		<result>/payOut/payOut_find.jsp</result>
+		<result name="error">/error/exception.jsp</result>
+	</action>
+</package>
+</struts>

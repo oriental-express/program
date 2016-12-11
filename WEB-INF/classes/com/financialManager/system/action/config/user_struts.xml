@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+	<package name="user_struts" extends="struts-default">
+		<action name="toUser" class="com.financialManager.system.action.UserAction" method="toUser">
+			<result>system/admin_add.jsp</result>
+		</action>
+		<action name="userGet" class="com.financialManager.system.action.UserAction" method="get">
+		    <result>/system/admin_update.jsp</result>
+			<result name="error">/error/exception.jsp</result>
+		</action>
+		<action name="toPersonUpdate" class="com.financialManager.system.action.UserAction" method="toPersonUpdate">
+		    <result>/system/person_update.jsp</result>
+			<result name="error">/error/exception.jsp</result>
+		</action>
+		<action name="userAdd" class="com.financialManager.system.action.UserAction" method="add">
+			<result type="redirectAction">userFind</result>
+			<result name="error">/error/exception.jsp</result>
+		</action>
+		<action name="userUpdate" class="com.financialManager.system.action.UserAction" method="update">
+			<result type="redirectAction">userFind</result>
+			<result name="error">/error/exception.jsp</result>
+		</action>
+		<action name="userDelete" class="com.financialManager.system.action.UserAction" method="delete">
+			<result type="redirectAction">userFind</result>
+			<result name="error">/error/exception.jsp</result>
+		</action>
+		<action name="userFind" class="com.financialManager.system.action.UserAction" method="findAll">
+			<result>/system/admin_list.jsp</result>
+			<result name="error">/error/exception.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
